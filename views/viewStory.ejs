@@ -1,0 +1,39 @@
+<%- include ('partials/header') %>
+
+
+<body>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+     </div>
+    <h1 class="container"><%= story.title %></h1>
+    <h2 class="container"> <%= story.author %></h2>
+
+      <form id="save-form" method="POST" action="/stories/<%= story._id %>?_method=PUT">
+        <div class="box" id="text-description" name="description">
+          <textarea id="editable-description" rows="5" cols="50"><%= story.description %></textarea>
+          <input type="hidden" id="description-input" name="story[description]" value="<%= story.description %>">
+        </div>
+        <button id="save-button" type="submit">Save</button>
+      </form>
+      
+      <script>
+
+        //grab both text area and input 
+        var editableDescription = document.getElementById("editable-description");
+        var descriptionInput = document.getElementById("description-input");
+      
+        //When theres an input in the text area, assign the input to descriptionInput as the value
+        editableDescription.addEventListener("input", function() {
+          descriptionInput.value = editableDescription.value;
+        });
+      </script>
+      
+
+      
+</body>
+</html>
