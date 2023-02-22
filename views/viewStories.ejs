@@ -1,13 +1,14 @@
 <%- include ('partials/header') %>
 
 <body>
+  <%- include ('./partials/nav') %>
+
     <div>
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
      </div>
  
-     <h1>hello</h1>
      <% for (let story of stories) { %>
         <ul>
             <li>The title of your story is: <a href="/stories/<%= story._id %>" ><%= story.title %></a></li>

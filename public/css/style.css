@@ -9,6 +9,13 @@
     margin-right: auto;
     background-color: transparent;
   }
+#delete-button {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+  }
 
 .box {
     width: 50%;

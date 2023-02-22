@@ -15,7 +15,7 @@ const StorySchema = new Schema({
         required: true
     },
     
-    author: { 
+    category: { 
         type: String,
         enum: ['action','adventure','horror']
     },
@@ -23,4 +23,6 @@ const StorySchema = new Schema({
 });
 
 //MongoDB Collection named here - will give lowercase plural of name 
-module.exports = mongoose.model("Story", StorySchema);
+const Stories = mongoose.model("Story", StorySchema);
+
+module.exports = Stories;

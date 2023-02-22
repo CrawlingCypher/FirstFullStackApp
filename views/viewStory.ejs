@@ -2,6 +2,7 @@
 
 
 <body>
+  <%- include ('./partials/nav') %>
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -13,15 +14,23 @@
     <h1 class="container"><%= story.title %></h1>
     <h2 class="container"> <%= story.author %></h2>
 
+
       <form id="save-form" method="POST" action="/stories/<%= story._id %>?_method=PUT">
         <div class="box" id="text-description" name="description">
           <textarea id="editable-description" rows="5" cols="50"><%= story.description %></textarea>
           <input type="hidden" id="description-input" name="story[description]" value="<%= story.description %>">
         </div>
         <button id="save-button" type="submit">Save</button>
+
       </form>
+
+
+      <form id="delete-form" method="POST"action="/stories/<%= story._id %>?_method=DELETE ">
+        <button id="delete-button" type="submit">Delete</button>
+      </form> 
       
       <script>
+      
 
         //grab both text area and input 
         var editableDescription = document.getElementById("editable-description");
